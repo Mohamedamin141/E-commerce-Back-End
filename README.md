@@ -38,4 +38,5 @@ Open API GET routes in Insomnia Core for categories, products, or tags to view t
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Link 
+https://youtu.be/hVC03GXJFOY
 
