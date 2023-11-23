@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Tag, Product, ProductTag } = require('../../models');
+const { Tag, Product, ProductTag } = require('../../models'); 
 
 // The `/api/tags` endpoint
 
@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   // find all tags
   try {
     const tagData = await Tag.findAll({
-      include: [{ model: Product },{model: ProductTag}]
+      include: [{ model: Product }] 
     });
     res.status(200).json(tagData);
   } catch (err) {
@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   try {
     const tagData = await Tag.findByPk(req.params.id, {
-      include: [{ model: Product },{model: ProductTag}]
+      include: [{ model: Product }] 
     });
     if (!tagData) {
       res.status(404).json({ message: 'Cannot find requested resource. Please check ID number.'});
@@ -51,7 +51,7 @@ router.put('/:id', async (req, res) => {
       }
     });
     if (!tagData[0]) {
-      res.status(404).json({ message: 'Cannot find ! what you are looking for!!'});
+      res.status(404).json({ message: 'Cannot find requested | Please check ID number '});
       return;
     }
     res.status(200).json(tagData);
@@ -69,7 +69,7 @@ router.delete('/:id', async (req, res) => {
       }
     });
     if (!tagData) {
-      res.status(404).json({ message: 'Cannot find ! what you are looking for!!'});
+      res.status(404).json({ message: 'Cannot find requested resource. Please check ID number.'});
       return;
     }
     res.status(200).json(tagData);
